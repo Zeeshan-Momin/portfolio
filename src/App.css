@@ -1,0 +1,118 @@
+/* App Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Light theme palette */
+  --bg-1: #f7fbff;
+  --bg-2: #eef6ff;
+  --text-primary: #0f1724;
+  --muted: #475569;
+  --card-bg: rgba(255,255,255,0.7);
+  --neon-cyan: #0ea5a4;
+  --neon-pink: #e11d48;
+  --neon-indigo: #7c3aed;
+}
+
+body {
+  background: linear-gradient(180deg, var(--bg-1), var(--bg-2));
+  color: var(--text-primary);
+  transition: background 350ms ease, color 200ms ease;
+}
+
+/* Dark theme overrides */
+.dark,
+[data-theme="dark"] {
+  --bg-1: #050816;
+  --bg-2: #081029;
+  --text-primary: #e6eef8;
+  --muted: #9aa6b2;
+  --card-bg: rgba(10,11,16,0.6);
+  --neon-cyan: #00f5ff;
+  --neon-pink: #ff2d95;
+  --neon-indigo: #a855f7;
+}
+
+/* Page backgrounds use gradients on dark, soft on light */
+.dark body,
+[data-theme="dark"] body {
+  background: radial-gradient(600px 400px at 10% 10%, rgba(168,85,247,0.12), transparent 8%),
+              radial-gradient(500px 350px at 90% 80%, rgba(0,245,255,0.06), transparent 10%),
+              linear-gradient(180deg, var(--bg-1), var(--bg-2));
+}
+
+
+/* Strong neon text effect with vibrant glow */
+.neon-text {
+  color: transparent;
+  background: linear-gradient(90deg, var(--neon-pink), var(--neon-indigo), var(--neon-cyan), var(--neon-pink));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255,45,149,0.4)) drop-shadow(0 0 16px rgba(168,85,247,0.3)) drop-shadow(0 0 24px rgba(0,245,255,0.2));
+  animation: neon-glow 3s ease-in-out infinite;
+}
+
+@keyframes neon-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255,45,149,0.4)) drop-shadow(0 0 16px rgba(168,85,247,0.3)) drop-shadow(0 0 24px rgba(0,245,255,0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255,45,149,0.6)) drop-shadow(0 0 24px rgba(168,85,247,0.5)) drop-shadow(0 0 32px rgba(0,245,255,0.35));
+  }
+}
+
+ .neon-glow {
+  box-shadow: 0 0 20px rgba(168,85,247,0.4), 0 0 40px rgba(0,245,255,0.2), inset 0 0 20px rgba(255,45,149,0.05);
+} 
+
+/* .neon-outline {
+  text-shadow: 0 0 8px rgba(255,45,149,0.5), 0 0 16px rgba(168,85,247,0.4), 0 0 24px rgba(0,245,255,0.2);
+  color: #00f5ff;
+} */
+
+.neon-btn {
+  background: linear-gradient(135deg, rgba(168,85,247,0.8), rgba(255,45,149,0.8));
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(168,85,247,0.4), inset 0 0 20px rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+}
+
+.neon-btn:hover {
+  background: linear-gradient(135deg, rgba(168,85,247,1), rgba(255,45,149,1));
+  box-shadow: 0 0 30px rgba(168,85,247,0.6), 0 0 40px rgba(255,45,149,0.4), inset 0 0 20px rgba(255,255,255,0.1);
+}
+
+.bolder { font-weight: 800; }
