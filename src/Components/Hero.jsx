@@ -1,4 +1,4 @@
-import profileImage from "../assets/Profile.jpg";
+import profile from "../assets/profile.JPG";
 
 export default function Hero() {
   return (
@@ -59,7 +59,7 @@ export default function Hero() {
               <div className="relative w-full aspect-[3/4] rounded-3xl bg-gradient-to-br from-purple-600 via-pink-500 to-indigo-700 p-1 shadow-2xl" style={{boxShadow: "0 0 60px rgba(168, 85, 247, 0.5), 0 0 40px rgba(0, 245, 255, 0.3), 0 0 20px rgba(255, 45, 149, 0.25)"}}>
                 <div className="w-full h-full rounded-3xl bg-gray-900/90 border border-white/10 flex items-center justify-center overflow-hidden">
                     <div className="text-center w-full  h-full">
-                      <img src={profileImage} alt="Zeeshan Momin" className="w-full h-full object-cover object-center"/>   
+                      <img src={profile} alt="Zeeshan Momin" className="w-full h-full object-cover object-center"/>   
                     </div>
                   </div>
               </div>
