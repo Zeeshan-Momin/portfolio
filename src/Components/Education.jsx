@@ -1,12 +1,12 @@
 export default function Education() {
   const items = [
     {
-      degree: "SSC",
-      school: "Hazrat Mohabbat Suleman Urdu High School, Islampur",
-      field: "General Education",
-      date: "2020 – 2021",
-      score: "88.20%",
-      desc: "Completed Secondary School Certificate with a focus on maths subjects.",
+      degree: "Bachelor of Engineering (B.E.)",
+      school: "Rajarambapu Institute of Technology, Islampur",
+      field: "Computer Engineering",
+      date: "2023 – Present",
+      score: "CGPA: 7.82 / 10",
+      desc: "Pursuing a degree in Computer Engineering with strong interests in Data Science, Algorithms, and Full-Stack Development.",
     },
     {
       degree: "HSC",
@@ -17,12 +17,12 @@ export default function Education() {
       desc: "Gained Higher Secondary Certificate specializing in science subjects including Physics, Chemistry, and Mathematics.",
     },
     {
-      degree: "Bachelor of Engineering (B.E.)",
-      school: "Rajarambapu Institute of Technology, Islampur",
-      field: "Computer Engineering",
-      date: "2023 – Present",
-      score: "CGPA: 7.82 / 10",
-      desc: "Pursuing a degree in Computer Engineering with strong interests in Data Science, Algorithms, and Full-Stack Development.",
+      degree: "SSC",
+      school: "Hazrat Mohabbat Suleman Urdu High School, Islampur",
+      field: "General Education",
+      date: "2020 – 2021",
+      score: "88.20%",
+      desc: "Completed Secondary School Certificate with a focus on maths subjects.",
     }
   ];
 

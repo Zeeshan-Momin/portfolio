@@ -4,11 +4,11 @@ const activities = [
   {
     role: "Class Representative",
     organization: "Computer Science Dept.",
-    period: "2023 — 2025",
+    period: "2023 — Present",
     responsibilities: [
-      "Coordinated between faculty and 70+ students",
-      "Managed feedback and academic schedules",
-      "Reasolved student issues and concerns",
+      "Coordinating between faculty and 70+ students",
+      "Managing feedback and academic schedules",
+      "Resolving student issues and concerns",
       "Being the point of contact for departmental activities"
     ]
   },
@@ -17,11 +17,11 @@ const activities = [
     organization: "Rise and Recruit Club",
     period: "2025 — Present",
     responsibilities: [
-      "Led Placement and Career focused activities",
-      "Help Students to become industry ready",
-      "Organised and managed multiple campus recruitment drives",
-      "Collaborated with companies for internships and placements",
-      "Mentored juniors on resume building and interview skills"
+      "I am leading Placement and Career focused activities",
+      "Helping students to become industry ready",
+      "Organising and managing multiple campus recruitment drives",
+      "Collaborating with companies for internships and placements",
+      "Mentoring juniors on resume building and interview skills"
     ]
   },
   {
@@ -29,10 +29,10 @@ const activities = [
     organization: "Computer Science and Engineering Student Association(CSESA)",
     period: "2025 — Present",
     responsibilities: [
-      "Led the student body representing over 350+ students",
-      "Organized technical workshops and cultural events",
-      "Worked with faculty to enhance student resources and facilities",
-      "Organize events for tech fest and other college activities"
+      "I am leading the student body representing over 350+ students",
+      "Organizing technical workshops and cultural events",
+      "Working with faculty to enhance student resources and facilities",
+      "Organizing events for tech fest and other college activities"
     ]
   }
 ];
