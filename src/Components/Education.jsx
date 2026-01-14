@@ -5,7 +5,7 @@ export default function Education() {
       school: "Rajarambapu Institute of Technology, Islampur",
       field: "Computer Engineering",
       date: "2023 – Present",
-      score: "CGPA: 7.82 / 10",
+      score: "CGPA: 7.91 / 10",
       desc: "Pursuing a degree in Computer Engineering with strong interests in Data Science, Algorithms, and Full-Stack Development.",
     },
     {
