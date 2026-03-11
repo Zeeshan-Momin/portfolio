@@ -6,7 +6,7 @@ export default function Footer() {
   useEffect(() => {
     const fetchVisitCount = async () => {
       try {
-        const response = await fetch('https://api.countapi.xyz/hit/zeeshan-momin.vercel.app/visits');
+        const response = await fetch('/api/visits');
         const data = await response.json();
         setVisitCount(data.value);
       } catch (error) {
@@ -28,7 +28,7 @@ export default function Footer() {
         </p>
         <div className="mt-4 pt-4 border-t border-white/10">
           <p className="text-gray-400 text-xs">
-            👀 Total Visits: <span className="text-cyan-400 font-semibold">{visitCount}</span>
+            👀 Total Visitors: <span className="text-cyan-400 font-semibold">{visitCount}</span>
           </p>
         </div>
       </div>
