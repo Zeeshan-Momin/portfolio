@@ -29,7 +29,7 @@ export default function Hero() {
               <a href="#projects" className="neon-btn px-6 py-3 rounded-full font-semibold text-center transition-all hover-lift hover-glow">
                 View my work →
               </a>
-              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zmeesh2012@gmail.com"
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mzeesh2012@gmail.com"
                  target="_blank"
                  rel="noopener noreferrer"
                  className="px-6 py-3 border-2 border-cyan-400 rounded-full font-semibold hover:bg-cyan-500/10 transition-all text-center hover-lift hover-scale-sm"
