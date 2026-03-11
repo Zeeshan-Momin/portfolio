@@ -7,32 +7,32 @@ export default function Hero() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
           {/* Left */}
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 border border-cyan-400/30 rounded-full text-xs font-medium">
-              <span className="w-2 h-2 rounded-full bg-cyan-400"></span>
+          <div className="space-y-8 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-2 border border-cyan-400/30 rounded-full text-xs font-medium animate-fade-down transition-smooth hover-scale">
+              <span className="w-2 h-2 rounded-full bg-cyan-400 animate-heartbeat"></span>
               <span className="text-cyan-300">Available for opportunities</span>
             </div>
 
             <div>
               <h1 className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight neon-text">
-                Hi, I'm <span className="neon-outline block mt-2">ZEESHAN MOMIN</span>
+                Hi, I'm <span className="neon-outline block mt-2 animate-fade-up stagger-2">ZEESHAN MOMIN</span>
               </h1>
-              <p className="text-xl text-gray-300 font-light">Crafting intelligent data solutions and digital experiences.</p>
+              <p className="text-xl text-gray-300 font-light animate-fade-up stagger-3">Crafting intelligent data solutions and digital experiences.</p>
             </div>
 
-            <p className="text-gray-400 text-base leading-relaxed max-w-lg">
+            <p className="text-gray-400 text-base leading-relaxed max-w-lg animate-fade-up stagger-4">
               Computer Engineering student passionate about data science, analytics, and building smart systems. 
               I combine strong analytical thinking with foundational Java and DSA skills to turn data into actionable intelligence.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 pt-1">
-              <a href="#projects" className="neon-btn px-6 py-3 rounded-full font-semibold text-center transition-all">
+            <div className="flex flex-col sm:flex-row gap-3 pt-1 animate-fade-up stagger-5">
+              <a href="#projects" className="neon-btn px-6 py-3 rounded-full font-semibold text-center transition-all hover-lift hover-glow">
                 View my work →
               </a>
               <a href="https://mail.google.com/mail/?view=cm&fs=1&to=zmeesh2012@gmail.com"
                  target="_blank"
                  rel="noopener noreferrer"
-                 className="px-6 py-3 border-2 border-cyan-400 rounded-full font-semibold hover:bg-cyan-500/10 transition-all text-center"
+                 className="px-6 py-3 border-2 border-cyan-400 rounded-full font-semibold hover:bg-cyan-500/10 transition-all text-center hover-lift hover-scale-sm"
               >
                 Get in touch
               </a>
@@ -41,7 +41,7 @@ export default function Hero() {
                 download="Zeeshan_Momin_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="neon-btn px-6 py-3 rounded-full font-semibold text-center transition-all"
+                className="neon-btn px-6 py-3 rounded-full font-semibold text-center transition-all hover-lift hover-glow"
               >
                 Download My Resume
               </a>

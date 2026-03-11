@@ -26,7 +26,7 @@ export default function Contact() {
   return (
     <section id="contact" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="space-y-4 mb-16">
+        <div className="space-y-4 mb-16 animate-fade-up">
           <h2 className="text-sm uppercase tracking-widest font-bold neon-text">Contact</h2>
           <h3 className="text-4xl md:text-5xl font-extrabold neon-text leading-[1.2] pb-2 z-20">Let's Work Together</h3>
         </div>
@@ -34,24 +34,24 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Contact Info */}
-          <div className="space-y-6 mt-18 md:mt-20">
-            <div className="neon-glow p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10">
+          <div className="space-y-6 mt-18 md:mt-20 animate-fade-up stagger-1">
+            <div className="neon-glow p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 hover-lift transition-smooth">
               <p className="text-xs text-cyan-300 uppercase tracking-widest font-bold mb-2">Email</p>
-              <a href="mailto:you@example.com" className="text-2xl font-bold text-white hover:text-cyan-400 transition">
+              <a href="mailto:you@example.com" className="text-2xl font-bold text-white hover:text-cyan-400 transition-colors-smooth">
                 mzeesh2012@gmail.com
               </a>
             </div>
 
-            <div className="neon-glow p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10">
+            <div className="neon-glow p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 hover-lift transition-smooth">
               <p className="text-xs text-cyan-300 uppercase tracking-widest font-bold mb-4">Connect</p>
               <div className="flex flex-wrap gap-3">
-                <a href="https://github.com/Zeeshan-Momin" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition">
+                <a href="https://github.com/Zeeshan-Momin" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm">
                   GitHub
                 </a> 
-                <a href="https://linkedin.com/in/zeeshan-momin-1a9085321" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition"> 
+                <a href="https://linkedin.com/in/zeeshan-momin-1a9085321" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm"> 
                   LinkedIn 
                 </a>
-                <a href="https://wa.me/7020761254" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition">
+                <a href="https://wa.me/7020761254" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm">
                   WhatsApp
                 </a> 
               </div>
@@ -59,7 +59,7 @@ export default function Contact() {
           </div>
 
           {/* Contact Form */}
-          <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
+          <form ref={formRef} onSubmit={sendEmail} className="space-y-6 animate-fade-up stagger-2">
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2">
               Name
@@ -69,7 +69,7 @@ export default function Contact() {
               name="name"                     // ✅ REQUIRED
               placeholder="Your name"
               required
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/50 transition"
+              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/50 transition-colors-smooth"
             />
           </div>
 
@@ -82,7 +82,7 @@ export default function Contact() {
               name="email"                   // ✅ REQUIRED
               placeholder="your@email.com"
               required
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/50 transition"
+              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/50 transition-colors-smooth"
             />
           </div>
 
@@ -95,12 +95,12 @@ export default function Contact() {
               placeholder="Tell me about your project..."
               rows={5}
               required
-              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/50 transition resize-none"
+              className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-cyan-400/50 transition-colors-smooth resize-none"
             />
           </div>
             <button
               type="submit"
-              className="neon-btn w-full px-6 py-3 rounded-lg font-semibold text-center">
+              className="neon-btn w-full px-6 py-3 rounded-lg font-semibold text-center hover-lift transition-smooth">
                 Send Message
             </button>
           </form>

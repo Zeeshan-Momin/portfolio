@@ -41,7 +41,7 @@ export default function Activities() {
   return (
     <section id="activities" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-    <div className="space-y-4 mb-16">
+    <div className="space-y-4 mb-16 animate-fade-up">
       <h2 className="text-sm uppercase tracking-widest font-bold neon-text">
         Activities
       </h2>
@@ -52,10 +52,10 @@ export default function Activities() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {activities.map((a, idx) => (
-            <div key={idx} className="bg-white/3 p-5 rounded-lg border border-white/6">
+            <div key={idx} className="bg-white/3 p-5 rounded-lg border border-white/6 neon-glow hover-lift transition-smooth animate-fade-up" style={{animationDelay: `${idx * 0.1}s`}}>
               <div className="flex items-center justify-between mb-3">
                 <div>
-                  <h3 className="text-lg font-semibold">{a.role}</h3>
+                  <h3 className="text-lg font-semibold text-white">{a.role}</h3>
                   <div className="text-xs text-gray-300">{a.organization}</div>
                 </div>
                 <div className="text-xs text-gray-400">{a.period}</div>
@@ -63,7 +63,7 @@ export default function Activities() {
 
               <ul className="list-disc ml-4 text-sm text-gray-200 space-y-1">
                 {a.responsibilities.map((r, i) => (
-                  <li key={i}>{r}</li>
+                  <li key={i} className="transition-colors-smooth hover:text-cyan-300">{r}</li>
                 ))}
               </ul>
             </div>

@@ -92,7 +92,7 @@ export default function Certificates() {
         <div className="max-w-7xl mx-auto px-6">
 
           {/* Section Heading */}
-          <div className="space-y-4 mb-16">
+          <div className="space-y-4 mb-16 animate-fade-up">
             <h2 className="text-sm uppercase tracking-widest font-bold neon-text">
               Certificates
             </h2>
@@ -103,7 +103,7 @@ export default function Certificates() {
 
           {/* States */}
           {loading ? (
-            <div className="text-gray-400">Loading certificates…</div>
+            <div className="text-gray-400 animate-pulse">Loading certificates…</div>
           ) : (
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {certs.map((c, i) => (
@@ -114,11 +114,12 @@ export default function Certificates() {
                              bg-gradient-to-br from-white/5 to-white/2
                              border border-white/10
                              hover:border-cyan-400/50
-                             transition-all"
+                             transition-all-smooth hover-lift hover-glow animate-fade-up"
+                  style={{animationDelay: `${i * 0.1}s`}}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <h4 className="text-lg font-semibold text-white group-hover:text-cyan-300 transition">
+                      <h4 className="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors-smooth">
                         {c.title}
                       </h4>
                       <p className="text-xs text-gray-400 mt-1">
@@ -134,7 +135,7 @@ export default function Certificates() {
                     {c.description}
                   </p>
 
-                  <div className="mt-4 text-cyan-400 text-sm font-medium">
+                  <div className="mt-4 text-cyan-400 text-sm font-medium group-hover:translate-x-1 transition-smooth">
                     View Certificate →
                   </div>
                 </button>
@@ -148,18 +149,18 @@ export default function Certificates() {
       {activeCert && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center
-                     bg-black/80 backdrop-blur-md"
+                     bg-black/80 backdrop-blur-md animate-fade"
         >
           <div
             className="relative w-[90vw] max-w-5xl h-[85vh]
                        bg-gradient-to-br from-zinc-900 to-black
                        rounded-2xl shadow-2xl border border-white/10
-                       animate-scaleIn"
+                       animate-scale-in"
           >
             {/* Close Button */}
             <button
               onClick={() => setActiveCert(null)}
-              className="absolute top-4 right-5 text-gray-400 hover:text-white text-2xl"
+              className="absolute top-4 right-5 text-gray-400 hover:text-white text-2xl transition-colors-smooth hover-scale"
             >
               ✕
             </button>
@@ -178,7 +179,7 @@ export default function Certificates() {
             <div className="grid md:grid-cols-2 h-[calc(85vh-72px)]">
 
   {/* LEFT: DETAILS */}
-  <div className="p-6 overflow-y-auto space-y-5">
+  <div className="p-6 overflow-y-auto space-y-5 animate-fade-up">
 
     <div>
       <h5 className="text-sm text-cyan-400 uppercase tracking-wide mb-2">
@@ -211,7 +212,8 @@ export default function Certificates() {
           <span
             key={i}
             className="px-3 py-1 text-xs rounded-full
-                       border border-cyan-400/40 text-cyan-300"
+                       border border-cyan-400/40 text-cyan-300 transition-colors-smooth hover:bg-cyan-500/10 hover-scale-sm animate-fade-up"
+            style={{animationDelay: `${i * 0.05}s`}}
           >
             {skill}
           </span>
@@ -226,7 +228,7 @@ export default function Certificates() {
       </h5>
       <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
         {activeCert.learnings.map((point, i) => (
-          <li key={i}>{point}</li>
+          <li key={i} className="animate-fade-up" style={{animationDelay: `${i * 0.05}s`}}>{point}</li>
         ))}
       </ul>
     </div>
@@ -240,7 +242,7 @@ export default function Certificates() {
         className="inline-block px-6 py-2 rounded-full
                    bg-cyan-500/20 text-cyan-300
                    border border-cyan-400/40
-                   hover:bg-cyan-500/30 transition"
+                   hover:bg-cyan-500/30 transition-all-smooth hover-lift"
       >
         Open Certificate ↗
       </a>
@@ -248,7 +250,7 @@ export default function Certificates() {
   </div>
 
   {/* RIGHT: PREVIEW */}
-  <div className="hidden md:block bg-black/40 rounded-br-2xl">
+  <div className="hidden md:block bg-black/40 rounded-br-2xl animate-fade-up stagger-1">
     {activeCert.type === "pdf" ? (
       <iframe
         src={activeCert.url}
@@ -268,23 +270,6 @@ export default function Certificates() {
           </div>
         </div>
       )}
-
-      {/* Animation */}
-      <style>{`
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(0.92);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        .animate-scaleIn {
-          animation: scaleIn 0.25s ease-out;
-        }
-      `}</style>
     </>
   );
 }

@@ -55,7 +55,7 @@ export default function Projects() {
   <>
     {/* Project Details Modal */}
     {selectedProject && (
-      <div className="fixed inset-0 z-50 flex items-center justify-center">
+      <div className="fixed inset-0 z-50 flex items-center justify-center animate-fade">
         
         {/* Background blur overlay */}
         <div
@@ -64,7 +64,7 @@ export default function Projects() {
         />
 
         {/* Modal box */}
-        <div className="relative z-50 max-w-2xl w-full mx-4 p-8 rounded-2xl bg-gray-900 border border-white/10 shadow-2xl">
+        <div className="relative z-50 max-w-2xl w-full mx-4 p-8 rounded-2xl bg-gray-900 border border-white/10 shadow-2xl animate-scale-in">
           
           {/* Title */}
           <h3 className="text-2xl font-extrabold neon-text mb-4">
@@ -81,7 +81,8 @@ export default function Projects() {
             {selectedProject.tags.map((tag, i) => (
               <span
                 key={i}
-                className="px-3 py-1 text-xs font-medium bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300"
+                className="px-3 py-1 text-xs font-medium bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 animate-fade-up transition-colors-smooth hover:bg-cyan-500/20"
+                style={{animationDelay: `${i * 0.05}s`}}
               >
                 {tag}
               </span>
@@ -90,7 +91,7 @@ export default function Projects() {
 
           {/* Attachments Section */}
           {selectedProject.attachments && selectedProject.attachments.length > 0 && (
-            <div className="mb-6 pb-6 border-b border-white/10">
+            <div className="mb-6 pb-6 border-b border-white/10 animate-fade-up">
               <h4 className="text-sm font-semibold text-cyan-400 mb-3">Attachments</h4>
               <div className="flex flex-wrap gap-3">
                 {selectedProject.attachments.map((attachment, idx) => (
@@ -99,7 +100,7 @@ export default function Projects() {
                     href={attachment.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-400/30 rounded-lg hover:bg-cyan-500/20 hover:border-cyan-400/60 transition-all text-cyan-300 text-sm font-medium"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-500/10 border border-cyan-400/30 rounded-lg hover:bg-cyan-500/20 hover:border-cyan-400/60 transition-all-smooth text-cyan-300 text-sm font-medium hover-lift"
                   >
                     <span>
                       {attachment.type === "pdf" && "📄"}
@@ -115,10 +116,10 @@ export default function Projects() {
           )}
 
           {/* Close button */}
-          <div className="flex justify-center">
+          <div className="flex justify-center animate-fade-up">
           <button
             onClick={() => setSelectedProject(null)}
-            className="neon-btn px-6 py-2 rounded-lg"
+            className="neon-btn px-6 py-2 rounded-lg hover-lift transition-smooth"
           >
             Close
           </button>
@@ -130,7 +131,7 @@ export default function Projects() {
     {/* Projects Section */}
     <section id="projects" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="space-y-4 mb-16">
+        <div className="space-y-4 mb-16 animate-fade-up">
           <h2 className="text-sm uppercase tracking-widest font-bold neon-text">
             Projects
           </h2>
@@ -142,12 +143,13 @@ export default function Projects() {
         <div className="grid md:grid-cols-3 gap-8">
           {displayedProjects.map((project, i) => (
             <div
-              className="group neon-glow p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 hover:border-cyan-400/50 transition-all">
-              <div className="text-5xl mb-4 group-hover:scale-110 transition">
+              className="group neon-glow p-8 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 hover:border-cyan-400/50 transition-all-smooth hover-lift hover-glow animate-fade-up"
+              style={{animationDelay: `${i * 0.1}s`}}>
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-smooth">
                 {project.icon}
               </div>
 
-              <div className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition">
+              <div className="text-xl font-bold text-white mb-2 group-hover:text-cyan-300 transition-smooth">
                 {project.title}
               </div>
 
@@ -160,7 +162,7 @@ export default function Projects() {
                   e.preventDefault();
                   setSelectedProject(project);
                 }}
-                className="text-cyan-400 text-sm hover:underline"
+                className="text-cyan-400 text-sm hover:underline hover:text-cyan-300 transition-colors-smooth"
               >
                 Read more
               </button>
@@ -170,7 +172,7 @@ export default function Projects() {
                 <div className="relative inline-block ml-3">
                   <button
                     onClick={() => setShowAttachments(showAttachments === i ? null : i)}
-                    className="inline-flex items-center gap-1 text-cyan-400 text-sm hover:text-cyan-300 transition-colors"
+                    className="inline-flex items-center gap-1 text-cyan-400 text-sm hover:text-cyan-300 transition-colors-smooth"
                     title="View attachments"
                   >
                     📎 {project.attachments.length}
@@ -178,14 +180,14 @@ export default function Projects() {
 
                   {/* Attachments Dropdown */}
                   {showAttachments === i && (
-                     <div onClick={(e) => e.stopPropagation()} className="absolute left-0 mt-2 w-48 bg-gray-800 border border-cyan-400/30 rounded-lg shadow-lg z-40 p-2">
+                     <div onClick={(e) => e.stopPropagation()} className="absolute left-0 mt-2 w-48 bg-gray-800 border border-cyan-400/30 rounded-lg shadow-lg z-40 p-2 animate-fade-up animate-scale-in">
                       {project.attachments.map((attachment, j) => (
                         <a
                           key={j}
                           href={attachment.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 w-full px-3 py-2 text-xs text-cyan-300 hover:bg-cyan-500/20 rounded transition-colors"
+                          className="flex items-center gap-2 w-full px-3 py-2 text-xs text-cyan-300 hover:bg-cyan-500/20 rounded transition-colors-smooth"
                         >
                           <span>
                             {attachment.type === "pdf" && "📄"}
@@ -205,7 +207,7 @@ export default function Projects() {
               {project.tags.slice(0, 2).map((t, idx) => (
               <span
                 key={idx}
-                className="px-2 py-1 text-xs font-medium bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300">
+                className="px-2 py-1 text-xs font-medium bg-cyan-500/10 border border-cyan-400/30 rounded-full text-cyan-300 transition-colors-smooth hover:bg-cyan-500/20">
                 {t}
               </span>
               ))}
@@ -223,10 +225,17 @@ export default function Projects() {
         </div>
 
         {projects.length > 3 && (
-          <div className="mt-12 text-center">
+          <div className="mt-12 text-center animate-fade-up">
             <button
-              onClick={() => setShowAll(!showAll)}
-              className="neon-btn px-8 py-3 rounded-full font-semibold inline-block"
+              onClick={() => {
+                setShowAll(!showAll);
+                if (showAll) {
+                  setTimeout(() => {
+                    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+                  }, 0);
+                }
+              }}
+              className="neon-btn px-8 py-3 rounded-full font-semibold inline-block hover-lift transition-smooth"
             >
               {showAll ? "Show less ←" : "View all projects →"}
             </button>

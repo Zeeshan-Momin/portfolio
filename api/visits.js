@@ -1,21 +1,4 @@
-import fs from 'fs';
-import path from 'path';
-
-// For local development, store in /tmp; for Vercel, use /tmp
-const dataDir = '/tmp';
-const dataFile = path.join(dataDir, 'visitors.json');
-
-// Ensure directory exists
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true });
-}
-
-// Initialize visitors file if it doesn't exist
-function initializeVisitorsFile() {
-  if (!fs.existsSync(dataFile)) {
-    fs.writeFileSync(dataFile, JSON.stringify({ uniqueIPs: new Set() }));
-  }
-}
+import { kv } from '@vercel/kv';
 
 // Get visitor IP from request headers
 function getClientIP(req) {
@@ -26,23 +9,7 @@ function getClientIP(req) {
   return req.headers['x-real-ip'] || req.socket?.remoteAddress || 'unknown';
 }
 
-// Read unique IPs from file
-function readVisitors() {
-  try {
-    const data = fs.readFileSync(dataFile, 'utf-8');
-    const parsed = JSON.parse(data);
-    return new Set(parsed.uniqueIPs || []);
-  } catch {
-    return new Set();
-  }
-}
-
-// Write unique IPs to file
-function writeVisitors(ips) {
-  fs.writeFileSync(dataFile, JSON.stringify({ uniqueIPs: Array.from(ips) }));
-}
-
-export default function handler(req, res) {
+export default async function handler(req, res) {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -58,19 +25,17 @@ export default function handler(req, res) {
   }
 
   try {
-    initializeVisitorsFile();
     const clientIP = getClientIP(req);
-    const visitors = readVisitors();
 
-    // Add current IP to set (Set automatically prevents duplicates)
-    visitors.add(clientIP);
+    // Add IP to KV set (automatically prevents duplicates)
+    await kv.sadd('unique_visitors', clientIP);
 
-    // Write updated visitors back to file
-    writeVisitors(visitors);
+    // Get total count of unique IPs
+    const uniqueCount = await kv.scard('unique_visitors');
 
     // Return unique visitor count
     res.status(200).json({
-      value: visitors.size,
+      value: uniqueCount,
       ip: clientIP,
     });
   } catch (error) {
