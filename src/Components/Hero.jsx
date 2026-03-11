@@ -2,8 +2,13 @@ import profile from "../assets/profile.jpg";
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center py-20">
-      <div className="max-w-7xl mx-auto w-full px-6">
+    <section id="hero" className="min-h-screen flex items-center justify-center py-20 relative overflow-hidden">
+      {/* Animated background blobs */}
+      <div className="absolute top-32 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-600 to-purple-400 rounded-full mix-blend-multiply opacity-40 blur-3xl animate-blob-1"></div>
+      <div className="absolute top-1/4 right-1/4 w-80 h-80 bg-gradient-to-br from-cyan-500 to-blue-400 rounded-full mix-blend-multiply opacity-30 blur-3xl animate-blob-2"></div>
+      <div className="absolute top-2/3 left-1/2 w-96 h-96 bg-gradient-to-br from-pink-500 to-rose-400 rounded-full mix-blend-multiply opacity-35 blur-3xl animate-blob-3"></div>
+      
+      <div className="max-w-7xl mx-auto w-full px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
           {/* Left */}

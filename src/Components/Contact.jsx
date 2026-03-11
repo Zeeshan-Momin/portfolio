@@ -37,21 +37,21 @@ export default function Contact() {
           <div className="space-y-6 mt-18 md:mt-20 animate-fade-up stagger-1">
             <div className="neon-glow p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 hover-lift transition-smooth">
               <p className="text-xs text-cyan-300 uppercase tracking-widest font-bold mb-2">Email</p>
-              <a href="mailto:you@example.com" className="text-2xl font-bold text-white hover:text-cyan-400 transition-colors-smooth">
+              <a href="mailto:mzeesh2012@gmail.com" className="text-sm sm:text-lg md:text-2xl font-bold text-white hover:text-cyan-400 transition-colors-smooth break-all">
                 mzeesh2012@gmail.com
               </a>
             </div>
 
             <div className="neon-glow p-6 rounded-2xl bg-gradient-to-br from-white/5 to-white/2 border border-white/10 hover-lift transition-smooth">
               <p className="text-xs text-cyan-300 uppercase tracking-widest font-bold mb-4">Connect</p>
-              <div className="flex flex-wrap gap-3">
-                <a href="https://github.com/Zeeshan-Momin" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm">
+              <div className="flex flex-wrap gap-2 sm:gap-3">
+                <a href="https://github.com/Zeeshan-Momin" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm">
                   GitHub
                 </a> 
-                <a href="https://linkedin.com/in/zeeshan-momin-1a9085321" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm"> 
+                <a href="https://linkedin.com/in/zeeshan-momin-1a9085321" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm"> 
                   LinkedIn 
                 </a>
-                <a href="https://wa.me/7020761254" target="_blank" className="px-4 py-2 rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm">
+                <a href="https://wa.me/7020761254" target="_blank" rel="noopener noreferrer" className="px-3 sm:px-4 py-2 text-xs sm:text-sm rounded-full border border-cyan-400/50 text-cyan-300 font-medium hover:bg-cyan-500/10 transition-all-smooth hover-scale-sm">
                   WhatsApp
                 </a> 
               </div>

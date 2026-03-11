@@ -245,6 +245,67 @@ body {
   }
 }
 
+/* Background blob animations */
+@keyframes blobMove1 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes blobMove2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 30px) scale(0.9);
+  }
+  66% {
+    transform: translate(25px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes blobMove3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, 40px) scale(1.05);
+  }
+  66% {
+    transform: translate(-30px, -25px) scale(0.95);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes floatingSlow {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-25px) translateX(5px);
+  }
+}
+
 /* Utility animation classes */
 .animate-fade {
   animation: fadeIn 0.6s ease-in-out;
@@ -292,6 +353,22 @@ body {
 
 .animate-gradient-shift {
   animation: gradientShift 3s ease infinite;
+}
+
+.animate-blob-1 {
+  animation: blobMove1 8s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: blobMove2 10s ease-in-out infinite;
+}
+
+.animate-blob-3 {
+  animation: blobMove3 12s ease-in-out infinite;
+}
+
+.animate-floating-slow {
+  animation: floatingSlow 6s ease-in-out infinite;
 }
 
 /* Smooth transitions */
