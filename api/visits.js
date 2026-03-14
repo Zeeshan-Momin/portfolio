@@ -22,13 +22,22 @@ const VISITORS_FILE = path.join(DATA_PATH, 'unique_visitors.json');
 
 function getClientIP(req) {
   const forwarded = req.headers['x-forwarded-for'];
-  if (forwarded) {
+  if (forwarded && typeof forwarded === 'string') {
     const first = forwarded.split(',')[0].trim();
-    if (first) return first;
+    if (first) {
+      return first.split(':').shift();
+    }
   }
 
-  const ip = req.headers['x-real-ip'] || req.socket?.remoteAddress;
-  if (ip) return ip;
+  const real = req.headers['x-real-ip'];
+  if (real && typeof real === 'string') {
+    return real.split(':').shift();
+  }
+
+  const socketIp = req.socket?.remoteAddress;
+  if (socketIp) {
+    return socketIp.split(':').pop();
+  }
 
   return 'unknown';
 }

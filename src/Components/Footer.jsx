@@ -17,6 +17,8 @@ export default function Footer() {
     };
 
     fetchVisitCount();
+    const interval = setInterval(fetchVisitCount, 20000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
