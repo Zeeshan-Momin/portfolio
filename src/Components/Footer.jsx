@@ -28,7 +28,7 @@ export default function Footer() {
         </p>
         <div className="mt-4 pt-4 border-t border-white/10 animate-fade-up stagger-2">
           <p className="text-gray-400 text-xs">
-            👀 Unique Visitors: <span className="text-cyan-400 font-semibold animate-pulse-glow">{visitCount}</span>
+            👀 Visitors visited: <span className="text-cyan-400 font-semibold animate-pulse-glow">{visitCount}</span>
           </p>
         </div>
       </div>
