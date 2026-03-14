@@ -33,28 +33,31 @@ function getClientIP(req) {
   return 'unknown';
 }
 
-function readLocalSet() {
+function readLocalData() {
   try {
     if (!fs.existsSync(DATA_PATH)) {
       fs.mkdirSync(DATA_PATH, { recursive: true });
     }
     if (!fs.existsSync(VISITORS_FILE)) {
-      fs.writeFileSync(VISITORS_FILE, JSON.stringify({ ips: [] }));
+      fs.writeFileSync(VISITORS_FILE, JSON.stringify({ ips: [], total: 0 }));
     }
     const raw = fs.readFileSync(VISITORS_FILE, 'utf-8');
     const data = JSON.parse(raw || '{}');
-    return new Set(Array.isArray(data.ips) ? data.ips : []);
+    return {
+      ips: new Set(Array.isArray(data.ips) ? data.ips : []),
+      total: typeof data.total === 'number' ? data.total : 0,
+    };
   } catch (error) {
-    console.error('Failed to read local visitors:', error);
-    return new Set();
+    console.error('Failed to read local visitor data:', error);
+    return { ips: new Set(), total: 0 };
   }
 }
 
-function writeLocalSet(set) {
+function writeLocalData(ipsSet, total) {
   try {
-    fs.writeFileSync(VISITORS_FILE, JSON.stringify({ ips: Array.from(set) }));
+    fs.writeFileSync(VISITORS_FILE, JSON.stringify({ ips: Array.from(ipsSet), total }));
   } catch (error) {
-    console.error('Failed to write local visitors:', error);
+    console.error('Failed to write local visitor data:', error);
   }
 }
 
@@ -77,19 +80,23 @@ export default async function handler(req, res) {
     const id = clientIP || 'unknown';
 
     let uniqueCount = 0;
+    let totalCount = 0;
 
     if (kv) {
       await kv.sadd('unique_visitors', id);
       uniqueCount = await kv.scard('unique_visitors');
+      totalCount = await kv.incr('total_visits');
     } else {
-      const set = readLocalSet();
-      set.add(id);
-      writeLocalSet(set);
-      uniqueCount = set.size;
+      const data = readLocalData();
+      data.ips.add(id);
+      totalCount = data.total + 1;
+      writeLocalData(data.ips, totalCount);
+      uniqueCount = data.ips.size;
     }
 
     res.status(200).json({
-      value: uniqueCount,
+      unique: uniqueCount,
+      total: totalCount,
       ip: id,
       backend: kv ? 'vercel-kv' : 'local-file',
     });

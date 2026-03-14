@@ -2,13 +2,15 @@ import { useState, useEffect } from 'react';
 
 export default function Footer() {
   const [visitCount, setVisitCount] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     const fetchVisitCount = async () => {
       try {
         const response = await fetch('/api/visits');
         const data = await response.json();
-        setVisitCount(data.value);
+        setVisitCount(data.unique ?? data.value ?? 0);
+        setTotalCount(data.total ?? data.value ?? 0);
       } catch (error) {
         console.error('Error fetching visit count:', error);
       }
@@ -28,7 +30,10 @@ export default function Footer() {
         </p>
         <div className="mt-4 pt-4 border-t border-white/10 animate-fade-up stagger-2">
           <p className="text-gray-400 text-xs">
-            👀 Visitors visited: <span className="text-cyan-400 font-semibold animate-pulse-glow">{visitCount}</span>
+            👀 Unique Visitors: <span className="text-cyan-400 font-semibold animate-pulse-glow">{visitCount}</span>
+          </p>
+          <p className="text-gray-400 text-xs mt-1">
+            🔁 Total Hits: <span className="text-indigo-400 font-semibold animate-pulse-glow">{totalCount}</span>
           </p>
         </div>
       </div>
