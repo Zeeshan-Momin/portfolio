@@ -38,6 +38,15 @@ export default function Projects() {
         {type: "pdf",name: "ER Model Report",url: "/attachments/ER Model.pdf"}
       ],
     },
+    {
+      title: "Movie Dataset Visualization Project",
+      description: "Analyzed TMDb movie metadata using Python to uncover trends in film production, genre distribution, and audience ratings. Implemented data preprocessing techniques such as cleaning, transformation, and feature extraction, followed by visualizations including line plots, bar charts, histograms, boxplots, and heatmaps to present insights on movie releases, genre popularity, and rating patterns over time.",
+      tags: ["Python","Data Analysis","Data Visualization","Pandas","Matplotlib","Seaborn"],
+      icon: "📈",
+      attachments: [
+        {type: "pdf",name: "Presentation",url: "/attachments/Movie-Dataset-Visualization-Project.pdf"}
+      ],
+    },
   ];
   const [selectedProject, setSelectedProject] = useState(null);
   const [showAttachments, setShowAttachments] = useState(null);
