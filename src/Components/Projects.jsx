@@ -2,22 +2,31 @@ import { useState, useEffect } from "react";
 
 export default function Projects() {
   const projects = [
-    {
-      title: "Development of Nano-adsorption process for Wastewater Treatment",
-      description: "This project demonstrates that wastewater treatment effectively removes contaminants and reduces undesirable components, making the water suitable for its intended use. Additionally, the treatment process helps protect environmental resources and supports sustainable water management practices.",
-      tags: ["Iron Nanoparticles", "Clay powder"," Graphite powder", "Activated charcoal"],
-      icon: "🧪",
+     {
+      title: "ER Model on Video Editing Classes",
+      description: "Designed and implemented a comprehensive Entity–Relationship (ER) model for a Video Editing Classes system as part of the Database Management System course. The project models students, teachers, courses, platforms, and admission/payment workflows, including relationships, derived attributes, and extensive SQL queries for data definition, manipulation, aggregation, and joins.",
+      tags: ["DBMS","ER Diagram","SQL","Relational Model","Database Design"],
+      icon: "🗂️",
       attachments: [
-         { type: "pdf", name: "Report", url: "/attachments/Development of Nano-adsorption process for Wastewater Treatment.pdf" }
+        {type: "pdf",name: "ER Model Report",url: "/attachments/ER Model.pdf"}
       ],
     },
     {
-      title: "Solar Car",
-      description: "This project focuses on the design and development of a hybrid solar car that operates on both photovoltaic solar energy and stored electrical power, demonstrating an efficient, sustainable transportation system while enabling performance analysis, research contributions, and participation in national-level engineering challenges.",
-      tags: ["Sunlight","Solar Panel","Battery", "Motor Controller", "Motor","Wheels"],
-      icon: "🚗",
+      title: "Smart Accident Detection and Routing System",
+      description: "Developing an AI-powered mobile application that detects road accidents in real-time using smartphone sensors such as accelerometer, gyroscope, and GPS. The system triggers instant alerts to nearby responders, provides first-aid guidance, and suggests optimal hospitals based on location and availability. Integrated with Firebase backend and SMS notification services, the project aims to reduce emergency response time and improve survival rates.",
+      tags: ["Android","AI","Sensor Data","Firebase","GPS","Real-time System"],
+      icon: "🚑",
       attachments: [
-         { type: "pdf", name: "Presentation", url: "/attachments/Solar car.pdf" }
+        {type: "pdf",name: "Presentation",url: "/attachments/Smart-Accident-Detection-and-Routing-System.pptx"}
+      ],
+    },
+     {
+      title: "Movie Dataset Visualization Project",
+      description: "Analyzed TMDb movie metadata using Python to uncover trends in film production, genre distribution, and audience ratings. Implemented data preprocessing techniques such as cleaning, transformation, and feature extraction, followed by visualizations including line plots, bar charts, histograms, boxplots, and heatmaps to present insights on movie releases, genre popularity, and rating patterns over time.",
+      tags: ["Python","Data Analysis","Data Visualization","Pandas","Matplotlib","Seaborn"],
+      icon: "📈",
+      attachments: [
+        {type: "pdf",name: "Presentation",url: "/attachments/Movie-Dataset-Visualization-Project.pdf"}
       ],
     },
     {
@@ -29,22 +38,22 @@ export default function Projects() {
          { type: "url", name: "Live", url: "https://project1-neon-two.vercel.app/login" }
       ],
     },
-    {
-      title: "ER Model on Video Editing Classes",
-      description: "Designed and implemented a comprehensive Entity–Relationship (ER) model for a Video Editing Classes system as part of the Database Management System course. The project models students, teachers, courses, platforms, and admission/payment workflows, including relationships, derived attributes, and extensive SQL queries for data definition, manipulation, aggregation, and joins.",
-      tags: ["DBMS","ER Diagram","SQL","Relational Model","Database Design"],
-      icon: "🗂️",
+     {
+      title: "Development of Nano-adsorption process for Wastewater Treatment",
+      description: "This project demonstrates that wastewater treatment effectively removes contaminants and reduces undesirable components, making the water suitable for its intended use. Additionally, the treatment process helps protect environmental resources and supports sustainable water management practices.",
+      tags: ["Iron Nanoparticles", "Clay powder"," Graphite powder", "Activated charcoal"],
+      icon: "🧪",
       attachments: [
-        {type: "pdf",name: "ER Model Report",url: "/attachments/ER Model.pdf"}
+        { type: "pdf", name: "Report", url: "/attachments/Development of Nano-adsorption process for Wastewater Treatment.pdf" }
       ],
     },
     {
-      title: "Movie Dataset Visualization Project",
-      description: "Analyzed TMDb movie metadata using Python to uncover trends in film production, genre distribution, and audience ratings. Implemented data preprocessing techniques such as cleaning, transformation, and feature extraction, followed by visualizations including line plots, bar charts, histograms, boxplots, and heatmaps to present insights on movie releases, genre popularity, and rating patterns over time.",
-      tags: ["Python","Data Analysis","Data Visualization","Pandas","Matplotlib","Seaborn"],
-      icon: "📈",
+      title: "Solar Car",
+      description: "This project focuses on the design and development of a hybrid solar car that operates on both photovoltaic solar energy and stored electrical power, demonstrating an efficient, sustainable transportation system while enabling performance analysis, research contributions, and participation in national-level engineering challenges.",
+      tags: ["Sunlight","Solar Panel","Battery", "Motor Controller", "Motor","Wheels"],
+      icon: "🚗",
       attachments: [
-        {type: "pdf",name: "Presentation",url: "/attachments/Movie-Dataset-Visualization-Project.pdf"}
+         { type: "pdf", name: "Presentation", url: "/attachments/Solar car.pdf" }
       ],
     },
   ];
