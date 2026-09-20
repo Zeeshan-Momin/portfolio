@@ -13,14 +13,14 @@ export default function Certificates() {
         platform: "Corsera",
         duration: "8 Weeks",
         skills: ["Core Java", "OOP", "Inheritance", "Polymorphism", "Abstraction"],
-        description:"Core Java programming concepts including object-oriented programming principles such as inheritance, polymorphism, abstraction, and encapsulation.",
-        learnings: 
-        [
-          "Strong understanding of Java syntax and core libraries",
-          "Applied OOP principles in real-world programming scenarios",
-          "Improved problem-solving skills using Java",
-          "Built structured and maintainable Java applications"
-        ],
+        description: "Core Java programming concepts including object-oriented programming principles such as inheritance, polymorphism, abstraction, and encapsulation.",
+        learnings:
+          [
+            "Strong understanding of Java syntax and core libraries",
+            "Applied OOP principles in real-world programming scenarios",
+            "Improved problem-solving skills using Java",
+            "Built structured and maintainable Java applications"
+          ],
         date: "2024",
         url: "/certificates/Programming-with-java.pdf",
         type: "pdf"
@@ -31,14 +31,14 @@ export default function Certificates() {
         platform: "AICTE Virtual Internship Program",
         duration: "10 Weeks",
         skills: ["Machine Learning", "Artificial Intelligence", "Python", "Data Analysis"],
-        description:"Virtual internship focused on machine learning fundamentals, AI concepts, and real-world problem-solving using industry-standard tools.",
-        learnings: 
-        [
-          "Understanding of supervised and unsupervised learning techniques",
-          "Hands-on experience with ML models using Python",
-          "Applied AI concepts to real-world datasets",
-          "Improved analytical thinking and model evaluation skills"
-        ],
+        description: "Virtual internship focused on machine learning fundamentals, AI concepts, and real-world problem-solving using industry-standard tools.",
+        learnings:
+          [
+            "Understanding of supervised and unsupervised learning techniques",
+            "Hands-on experience with ML models using Python",
+            "Applied AI concepts to real-world datasets",
+            "Improved analytical thinking and model evaluation skills"
+          ],
         date: "2024",
         url: "/certificates/ai-ml-google-developers.pdf",
         type: "pdf"
@@ -49,14 +49,14 @@ export default function Certificates() {
         platform: "AWS Academy",
         duration: "10 Weeks",
         skills: ["Data Engineering", "AWS", "Data Pipelines", "Cloud Fundamentals"],
-        description:"Completed a structured virtual internship in Data Engineering, covering cloud fundamentals, data pipelines, and industry-grade practices using AWS Academy curriculum.",
-        learnings: 
-        [
-          "Built and understood end-to-end data pipelines",
-          "Gained hands-on exposure to AWS cloud services",
-          "Learned data ingestion, transformation, and storage concepts",
-          "Understood industry best practices in data engineering"
-        ],
+        description: "Completed a structured virtual internship in Data Engineering, covering cloud fundamentals, data pipelines, and industry-grade practices using AWS Academy curriculum.",
+        learnings:
+          [
+            "Built and understood end-to-end data pipelines",
+            "Gained hands-on exposure to AWS cloud services",
+            "Learned data ingestion, transformation, and storage concepts",
+            "Understood industry best practices in data engineering"
+          ],
         date: "2025",
         url: "/certificates/Data-Engineering-Virtual-Internship.pdf",
         type: "pdf"
@@ -67,14 +67,14 @@ export default function Certificates() {
         platform: "Analyttica Learning Platform",
         duration: "6 Weeks",
         skills: ["Data Analytics", "Statistics", "Data Interpretation", "Visualization"],
-        description:"Completed a comprehensive course on data analytics fundamentals, focusing on data interpretation, analytical thinking, and data-driven decision-making.",
-        learnings: 
-        [
-          "Strong foundation in data analytics concepts",
-          "Applied statistical methods for data analysis",
-          "Improved ability to interpret and visualize data insights",
-          "Developed analytical thinking for business decisions"
-        ],
+        description: "Completed a comprehensive course on data analytics fundamentals, focusing on data interpretation, analytical thinking, and data-driven decision-making.",
+        learnings:
+          [
+            "Strong foundation in data analytics concepts",
+            "Applied statistical methods for data analysis",
+            "Improved ability to interpret and visualize data insights",
+            "Developed analytical thinking for business decisions"
+          ],
         date: "Oct 2025",
         url: "/certificates/Fundamentals-of-Data-Analytics.pdf",
         type: "pdf"
@@ -115,7 +115,7 @@ export default function Certificates() {
                              border border-white/10
                              hover:border-cyan-400/50
                              transition-all-smooth hover-lift hover-glow animate-fade-up"
-                  style={{animationDelay: `${i * 0.1}s`}}
+                  style={{ animationDelay: `${i * 0.1}s` }}
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div>
@@ -178,94 +178,94 @@ export default function Certificates() {
             {/* Content */}
             <div className="grid md:grid-cols-2 h-[calc(85vh-72px)]">
 
-  {/* LEFT: DETAILS */}
-  <div className="p-6 overflow-y-auto space-y-5 animate-fade-up">
+              {/* LEFT: DETAILS */}
+              <div className="p-6 overflow-y-auto space-y-5 animate-fade-up">
 
-    <div>
-      <h5 className="text-sm text-cyan-400 uppercase tracking-wide mb-2">
-        Overview
-      </h5>
-      <p className="text-gray-300 text-sm leading-relaxed">
-        {activeCert.description}
-      </p>
-    </div>
+                <div>
+                  <h5 className="text-sm text-cyan-400 uppercase tracking-wide mb-2">
+                    Overview
+                  </h5>
+                  <p className="text-gray-300 text-sm leading-relaxed">
+                    {activeCert.description}
+                  </p>
+                </div>
 
-    {/* Meta info */}
-    <div className="grid grid-cols-2 gap-4 text-sm">
-      <div>
-        <span className="text-gray-400">Platform</span>
-        <p className="text-white font-medium">{activeCert.platform}</p>
-      </div>
-      <div>
-        <span className="text-gray-400">Duration</span>
-        <p className="text-white font-medium">{activeCert.duration}</p>
-      </div>
-    </div>
+                {/* Meta info */}
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <span className="text-gray-400">Platform</span>
+                    <p className="text-white font-medium">{activeCert.platform}</p>
+                  </div>
+                  <div>
+                    <span className="text-gray-400">Duration</span>
+                    <p className="text-white font-medium">{activeCert.duration}</p>
+                  </div>
+                </div>
 
-    {/* Skills */}
-    <div>
-      <h5 className="text-sm text-cyan-400 uppercase tracking-wide mb-2">
-        Skills Gained
-      </h5>
-      <div className="flex flex-wrap gap-2">
-        {activeCert.skills.map((skill, i) => (
-          <span
-            key={i}
-            className="px-3 py-1 text-xs rounded-full
+                {/* Skills */}
+                <div>
+                  <h5 className="text-sm text-cyan-400 uppercase tracking-wide mb-2">
+                    Skills Gained
+                  </h5>
+                  <div className="flex flex-wrap gap-2">
+                    {activeCert.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs rounded-full
                        border border-cyan-400/40 text-cyan-300 transition-colors-smooth hover:bg-cyan-500/10 hover-scale-sm animate-fade-up"
-            style={{animationDelay: `${i * 0.05}s`}}
-          >
-            {skill}
-          </span>
-        ))}
-      </div>
-    </div>
+                        style={{ animationDelay: `${i * 0.05}s` }}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
 
-    {/* Learnings */}
-    <div>
-      <h5 className="text-sm text-cyan-400 uppercase tracking-wide mb-2">
-        Key Learnings
-      </h5>
-      <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
-        {activeCert.learnings.map((point, i) => (
-          <li key={i} className="animate-fade-up" style={{animationDelay: `${i * 0.05}s`}}>{point}</li>
-        ))}
-      </ul>
-    </div>
+                {/* Learnings */}
+                <div>
+                  <h5 className="text-sm text-cyan-400 uppercase tracking-wide mb-2">
+                    Key Learnings
+                  </h5>
+                  <ul className="list-disc list-inside text-sm text-gray-300 space-y-1">
+                    {activeCert.learnings.map((point, i) => (
+                      <li key={i} className="animate-fade-up" style={{ animationDelay: `${i * 0.05}s` }}>{point}</li>
+                    ))}
+                  </ul>
+                </div>
 
-    {/* Actions */}
-    <div className="pt-4">
-      <a
-        href={activeCert.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block px-6 py-2 rounded-full
+                {/* Actions */}
+                <div className="pt-4">
+                  <a
+                    href={activeCert.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-6 py-2 rounded-full
                    bg-cyan-500/20 text-cyan-300
                    border border-cyan-400/40
                    hover:bg-cyan-500/30 transition-all-smooth hover-lift"
-      >
-        Open Certificate ↗
-      </a>
-    </div>
-  </div>
+                  >
+                    Open Certificate ↗
+                  </a>
+                </div>
+              </div>
 
-  {/* RIGHT: PREVIEW */}
-  <div className="hidden md:block bg-black/40 rounded-br-2xl animate-fade-up stagger-1">
-    {activeCert.type === "pdf" ? (
-      <iframe
-        src={activeCert.url}
-        title={activeCert.title}
-        className="w-full h-full rounded-br-2xl"
-      />
-    ) : (
-      <img
-        src={activeCert.url}
-        alt={activeCert.title}
-        className="w-full h-full object-contain rounded-br-2xl"
-      />
-    )}
-  </div>
-</div>
+              {/* RIGHT: PREVIEW */}
+              <div className="hidden md:block bg-black/40 rounded-br-2xl animate-fade-up stagger-1">
+                {activeCert.type === "pdf" ? (
+                  <iframe
+                    src={activeCert.url}
+                    title={activeCert.title}
+                    className="w-full h-full rounded-br-2xl"
+                  />
+                ) : (
+                  <img
+                    src={activeCert.url}
+                    alt={activeCert.title}
+                    className="w-full h-full object-contain rounded-br-2xl"
+                  />
+                )}
+              </div>
+            </div>
 
           </div>
         </div>

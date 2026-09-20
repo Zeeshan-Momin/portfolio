@@ -8,7 +8,13 @@ export default function Footer() {
     const fetchVisitCount = async () => {
       try {
         const response = await fetch('/api/visits');
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+
         const data = await response.json();
+
         setVisitCount(data.unique ?? data.value ?? 0);
         setTotalCount(data.total ?? data.value ?? 0);
       } catch (error) {
@@ -17,8 +23,6 @@ export default function Footer() {
     };
 
     fetchVisitCount();
-    const interval = setInterval(fetchVisitCount, 20000);
-    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -27,15 +31,24 @@ export default function Footer() {
         <div className="neon-text font-semibold mb-2">
           © {new Date().getFullYear()} Zeeshan Momin
         </div>
+
         <p className="text-gray-500 text-sm animate-fade-up stagger-1">
           Crafted with creativity and code • Built with React & Tailwind CSS
         </p>
+
         <div className="mt-4 pt-4 border-t border-white/10 animate-fade-up stagger-2">
           <p className="text-gray-400 text-xs">
-            👀 Unique Visitors: <span className="text-cyan-400 font-semibold animate-pulse-glow">{visitCount}</span>
+            👀 Unique Visitors:{' '}
+            <span className="text-cyan-400 font-semibold animate-pulse-glow">
+              {visitCount}
+            </span>
           </p>
+
           <p className="text-gray-400 text-xs mt-1">
-            🔁 Total Hits: <span className="text-indigo-400 font-semibold animate-pulse-glow">{totalCount}</span>
+            🔁 Total Hits:{' '}
+            <span className="text-indigo-400 font-semibold animate-pulse-glow">
+              {totalCount}
+            </span>
           </p>
         </div>
       </div>

@@ -5,7 +5,7 @@ export default function Education() {
       school: "Rajarambapu Institute of Technology, Islampur",
       field: "Computer Engineering",
       date: "2023 – Present",
-      score: "CGPA: 7.91 / 10",
+      score: "CGPA: 8.01 / 10",
       desc: "Pursuing a degree in Computer Engineering with strong interests in Data Science, Algorithms, and Full-Stack Development.",
     },
     {
@@ -40,9 +40,9 @@ export default function Education() {
 
           <div className="space-y-12 relative">
             {items.map((item, i) => (
-              <div key={i} className={`md:flex gap-12 items-start animate-fade-up transition-smooth ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`} style={{animationDelay: `${i * 0.1}s`}}>
+              <div key={i} className={`md:flex gap-12 items-start animate-fade-up transition-smooth ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`} style={{ animationDelay: `${i * 0.1}s` }}>
                 <div className="md:w-1/2"></div>
-                
+
                 <div className="absolute left-0 w-4 h-4 bg-cyan-400 rounded-full -translate-x-1.5 md:left-1/2 md:-translate-x-1/2 mt-6 animate-pulse-glow"></div>
 
                 <div className="md:w-1/2 ml-12 md:ml-0">
